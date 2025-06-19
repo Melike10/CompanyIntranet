@@ -8,6 +8,8 @@ Bu proje, kurum içi bilgilendirme sisteminde **duyuruların yönetimini sağlay
 > Her yeni duyuruda ilgili kullanıcılara **otomatik olarak e-posta gönderilmesi** hedeflenmiştir.
 
 ---
+![Duyuru Listesi](https://github.com/Melike10/CompanyIntranet/blob/47ec00a9741f0206457a7964b8f8bc420dba2899/DuyuruSayfasi.png)
+![Mail Gönderimi Kanıtı](https://github.com/Melike10/CompanyIntranet/blob/47ec00a9741f0206457a7964b8f8bc420dba2899/fakesender.png)
 
 ## 🛠️ Kullanılan Teknolojiler
 
