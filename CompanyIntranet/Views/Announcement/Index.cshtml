@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity
+
+@{
+    bool isIK = User.IsInRole("IK");
+}
+
+@model IEnumerable<CompanyIntranet.DTOs.AnnouncementDto>
+
+@{
+    ViewData["Title"] = "Duyuru Listesi";
+}
+
+<h1>Duyuru Listesi</h1>
+
+<p>
+
+    @if (isIK)
+    {
+        <a asp-action="Create" class="btn btn-primary">Yeni Duyuru Ekle</a>
+    }
+    else
+    {
+        <a class="btn btn-primary disabled" href="#" onclick="return false;">Yeni Duyuru Ekle</a>
+    }
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>İçerik</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+             <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Content</td>
+            @if (isIK)
+            {
+               
+                    <td>
+
+                        <a asp-action="Edit" asp-route-id="@item.Id">Güncelle</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Detay</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                    </td>
+               
+            }
+           
+        else
+
+            {
+                    <td>
+
+                        
+                        <a asp-action="Details" asp-route-id="@item.Id">Detay</a>
+                      
+                    </td>
+            }
+            </tr>
+        }
+    </tbody>
+</table>
